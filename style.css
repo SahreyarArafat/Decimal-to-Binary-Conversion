@@ -33,6 +33,7 @@ header {
     align-items: center;
     justify-content: center;
     background: rgba(48, 48, 48, 0.192);
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .heading {
@@ -42,7 +43,7 @@ header {
 }
 
 .content {
-    height: calc( calc(100vh - 120px) - 173px);
+    height: calc( calc(100vh - 120px) - 169px);
     min-height: 490px;
     display: flex;
     flex-direction: column;
@@ -77,6 +78,7 @@ label {
     display: block;
     text-align: left;
     color: aliceblue;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .unit-container select {
@@ -89,6 +91,7 @@ label {
     font-weight: 600;
     display: block;
     border: transparent;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .input-container,
@@ -99,6 +102,7 @@ label {
     align-items: center;
     width: 600px;
     padding: 20px 0px 30px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .input-container {
@@ -137,7 +141,8 @@ input {
     text-transform: uppercase;
     border: 0;
     background-color: #d4d4d4a2;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .button-container {
@@ -216,13 +221,14 @@ textarea {
     border-radius: 10px 0px 0px 10px;
     font-size: 20px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     display: block;
     outline: transparent;
     text-transform: uppercase;
     resize: vertical;
     border: 0;
     background-color: #d4d4d4a2;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 footer {
@@ -231,6 +237,7 @@ footer {
     color: azure;
     width: 100%;
     padding: 30px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 footer a {
