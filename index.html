@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Icon cdn link is given below. -->
+    <script src="https://kit.fontawesome.com/8b9110ef0c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Decimal to Binary Conversion</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="heading"><span id="heading-unit1">Decimal</span> to <span id="heading-unit2">Binary</span> converter</h1>
+    </header>
+    <div class="content">
+        <div class="sub-content">
+            <div class="unit-container">
+                <div class="unit-1-Container">
+                    <label for="unit-1">From</label>
+                    <select name="unit-1" id="unit-1" onchange="update_heading_and_imputLabel_as_unit2()">
+                <option value="10">Decimal</option>
+                <option value="2">Binary</option>
+                <option value="8">Octal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+                </div>
+                <div class="unit-2-Container">
+                    <label for="unit-2">To</label>
+                    <select name="unit-2" id="unit-2" onchange="update_heading_as_unit2()">
+                <option value="2" id="u-2-binary">Binary</option>
+                <option value="8" id="u-2-octal" >Octal</option>
+                <option value="16" id="u-2-hexa" >Hexadecimal</option>
+                <option value="10" id="u-2-decimal">Decimal</option>
+            </select>
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="number-imput">Enter <span id="imput_label">decimal</span> number</label>
+                <div class="imput-and-base">
+                    <input type="text" id="number-imput" required>
+                    <div class="base" id="imput_number_base">10</div>
+                </div>
+                <div class="button-container">
+                    <div class="button convert_btn" onclick="convert_btn()"><span><i class="fa-solid fa-equals"></i></span>Convert</div>
+                    <div class="button reset_btn" onclick="reset_btn()"><span><i class="fa-solid fa-xmark"></i></span> Reset</div>
+                </div>
+            </div>
+            <div class="output-container">
+                <label for="number-output"><span id="selected_name_unit-2">Binary</span> number</label>
+                <div class="output-and-base">
+                    <textarea id="number-output" readonly></textarea>
+                    <div class="base" id="output_number_base">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h4>Follow Us</h4>
+        <div class="social-icons-container">
+            <a href="#">
+                <div class="twitter icon"> <i class="fa-brands fa-twitter"></i> </div>
+            </a>
+            <a href="#">
+                <div class="instagram icon"><i class="fa-brands fa-instagram"></i> </div>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100070036620942">
+                <div class="facebook icon"> <i class="fa-brands fa-facebook-f"></i></div>
+            </a>
+        </div>
+        <p>© 2022 All Rights Reserved.</p>
+        <p>Made by the <span class="heart">&#x2665;</span> of <a href="sahreyararafat.tk"> SahreyarArafat</a></p>
+    </footer>
+
+    <!-- Footer Section is finished ! -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
