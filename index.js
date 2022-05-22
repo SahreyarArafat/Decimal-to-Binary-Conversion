@@ -15,9 +15,15 @@ function update_heading_as_unit2() {
     heading_unit2.innerHTML = option_unit2.text;
 }
 
+document.getElementById('number-imput').addEventListener('click', () => {
+    document.getElementById('number-imput').style.backgroundColor = '#d4d4d4a2';
+})
+
+
 
 function convert_btn() {
     var number_output_container = document.getElementById('number-output');
+    var imput = document.getElementById('number-imput');
     var imputed_number = document.getElementById('number-imput').value;
     var select_unit1 = document.getElementById('unit-1');
     var option_unit1 = select_unit1.options[select_unit1.selectedIndex];
@@ -37,12 +43,15 @@ function convert_btn() {
     }
     if (imputed_number == '') {
 
-        number_output_container.innerHTML = 'Enter a number.'
+        number_output_container.innerHTML = 'Enter a number :/'
+        imput.style.backgroundColor = '#d18a8aa2';
+
 
     } else if (option_unit1.text === 'Decimal') {
 
         if (HexNumbers || notNumbers == true) {
-            number_output_container.innerHTML = `Enter only Binary Number.`
+            number_output_container.innerHTML = `Enter Decimal Number ;/`
+            imput.style.backgroundColor = '#d18a8aa2';
         } else {
             unit2_value();
             number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(imputed_number, option_unit2.value);
@@ -51,7 +60,8 @@ function convert_btn() {
     } else if (option_unit1.text === 'Binary') {
 
         if (notBinaryNumbers || HexNumbers || notNumbers == true) {
-            number_output_container.innerHTML = `Enter only Binary Number.`
+            number_output_container.innerHTML = `Enter Binary Number ;/`
+            imput.style.backgroundColor = '#d18a8aa2';
         } else {
             unit2_value()
             convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
@@ -62,7 +72,8 @@ function convert_btn() {
     } else if (option_unit1.text === 'Octal') {
 
         if (notOctalNumbers || HexNumbers || notNumbers == true) {
-            number_output_container.innerHTML = `Enter only Octal Number.`
+            number_output_container.innerHTML = `Enter Octal Number ;/`
+            imput.style.backgroundColor = '#d18a8aa2';
         } else {
             unit2_value()
             convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
@@ -73,7 +84,8 @@ function convert_btn() {
     } else if (option_unit1.text === 'Hexadecimal') {
 
         if (notNumbers == true) {
-            number_output_container.innerHTML = `Enter only Hex Number.`
+            number_output_container.innerHTML = `Enter Hex Number ;/`
+            imput.style.backgroundColor = '#d18a8aa2';
         } else {
             unit2_value()
             convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
