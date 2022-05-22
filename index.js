@@ -24,8 +24,10 @@ function convert_btn() {
     var select_unit2 = document.getElementById('unit-2');
     var option_unit2 = select_unit2.options[select_unit2.selectedIndex];
     document.querySelector('title').textContent = option_unit1.text + ' to ' + option_unit2.text + ' Conversion';
-
-
+    var notNumbers = imputed_number.includes('g') || imputed_number.includes('h') || imputed_number.includes('i') || imputed_number.includes('j') || imputed_number.includes('k') || imputed_number.includes('l') || imputed_number.includes('n') || imputed_number.includes('o') || imputed_number.includes('p') || imputed_number.includes('q') || imputed_number.includes('r') || imputed_number.includes('s') || imputed_number.includes('t') || imputed_number.includes('u') || imputed_number.includes('v') || imputed_number.includes('w') || imputed_number.includes('x') || imputed_number.includes('y') || imputed_number.includes('z');
+    var notBinaryNumbers = imputed_number.includes('2') || imputed_number.includes('3') || imputed_number.includes('4') || imputed_number.includes('5') || imputed_number.includes('6') || imputed_number.includes('7') || imputed_number.includes('8') || imputed_number.includes('9');
+    var notOctalNumbers = imputed_number.includes('8') || imputed_number.includes('9');
+    var HexNumbers = imputed_number.includes('a') || imputed_number.includes('b') || imputed_number.includes('c') || imputed_number.includes('d') || imputed_number.includes('e') || imputed_number.includes('f');
 
     function unit2_value() {
         /*------The following line is to rename the output level.-----*/
@@ -34,35 +36,63 @@ function convert_btn() {
 
     }
     if (imputed_number == '') {
+
         number_output_container.innerHTML = 'Enter a number.'
+
     } else if (option_unit1.text === 'Decimal') {
-        unit2_value();
-        number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(imputed_number, option_unit2.value);
+
+        if (HexNumbers || notNumbers == true) {
+            number_output_container.innerHTML = `Enter only Binary Number.`
+        } else {
+            unit2_value();
+            number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(imputed_number, option_unit2.value);
+        }
+
     } else if (option_unit1.text === 'Binary') {
-        unit2_value()
-        convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        var Binary_to_decimal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_decimal_converted_number, option_unit2.value);
+
+        if (notBinaryNumbers || HexNumbers || notNumbers == true) {
+            number_output_container.innerHTML = `Enter only Binary Number.`
+        } else {
+            unit2_value()
+            convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            var Binary_to_decimal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_decimal_converted_number, option_unit2.value);
+        }
+
     } else if (option_unit1.text === 'Octal') {
-        unit2_value()
-        convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        var Binary_to_Octal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_Octal_converted_number, option_unit2.value);
+
+        if (notOctalNumbers || HexNumbers || notNumbers == true) {
+            number_output_container.innerHTML = `Enter only Octal Number.`
+        } else {
+            unit2_value()
+            convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            var Binary_to_Octal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_Octal_converted_number, option_unit2.value);
+        }
+
     } else if (option_unit1.text === 'Hexadecimal') {
-        unit2_value()
-        convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        var Binary_to_Hexadecimal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
-        number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_Hexadecimal_converted_number, option_unit2.value);
+
+        if (notNumbers == true) {
+            number_output_container.innerHTML = `Enter only Hex Number.`
+        } else {
+            unit2_value()
+            convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            var Binary_to_Hexadecimal_converted_number = convert_nonDecimal_to_Decimal(imputed_number, option_unit1.value);
+            number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(Binary_to_Hexadecimal_converted_number, option_unit2.value);
+        }
+
     } else {
         console.log('false');
 
     }
 
 }
+
+
+
 window.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         convert_btn()
-            // console.log('pfdsoij');
     }
 });
 

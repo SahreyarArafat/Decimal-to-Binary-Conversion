@@ -192,11 +192,11 @@ input {
 }
 
 .convert_btn:hover .fa-equals {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .reset_btn:hover .fa-xmark {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .input-container span {
@@ -216,8 +216,7 @@ input {
 
 textarea {
     width: 86%;
-    padding: 10px;
-    text-align: justify;
+    padding: 9px;
     border-radius: 10px 0px 0px 10px;
     font-size: 20px;
     font-weight: 600;
