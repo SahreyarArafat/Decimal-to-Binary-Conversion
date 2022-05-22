@@ -43,7 +43,7 @@ header {
 }
 
 .content {
-    height: calc( calc(100vh - 120px) - 169px);
+    height: calc( calc(100vh - 120px) - 165px);
     min-height: 490px;
     display: flex;
     flex-direction: column;
@@ -328,7 +328,6 @@ footer p:last-child a {
     color: #e00;
     animation: beat .25s infinite alternate;
     transform-origin: center;
-    overflow: hidden;
 }
 
 @keyframes beat {
@@ -424,6 +423,30 @@ footer p:last-child a {
     input {
         width: 85%;
     }
+    .button:hover {
+        transform: none;
+    }
+    .button:active {
+        transform: scale(.90);
+    }
+    .convert_btn:hover {
+        background-color: #23d5d5;
+    }
+    .reset_btn:hover {
+        background-color: #23d5d5;
+    }
+    .convert_btn:active {
+        background-color: green;
+    }
+    .reset_btn:active {
+        background-color: red;
+    }
+    .convert_btn:hover .fa-equals {
+        font-size: 12px;
+    }
+    .reset_btn:hover .fa-xmark {
+        font-size: 12px;
+    }
 }
 
 
@@ -485,6 +508,30 @@ footer p:last-child a {
     }
     .button span i {
         font-size: 10px;
+    }
+    .button:hover {
+        transform: none;
+    }
+    .button:active {
+        transform: scale(.90);
+    }
+    .convert_btn:hover {
+        background-color: #23d5d5;
+    }
+    .reset_btn:hover {
+        background-color: #23d5d5;
+    }
+    .convert_btn:active {
+        background-color: green;
+    }
+    .reset_btn:active {
+        background-color: red;
+    }
+    .convert_btn:hover .fa-equals {
+        font-size: 12px;
+    }
+    .reset_btn:hover .fa-xmark {
+        font-size: 12px;
     }
     footer {
         text-align: center;

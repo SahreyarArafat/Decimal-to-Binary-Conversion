@@ -17,7 +17,6 @@ function update_heading_as_unit2() {
 
 
 function convert_btn() {
-    // newPageTitle = 'title changed!';
     var number_output_container = document.getElementById('number-output');
     var imputed_number = document.getElementById('number-imput').value;
     var select_unit1 = document.getElementById('unit-1');
@@ -34,8 +33,9 @@ function convert_btn() {
         document.getElementById('output_number_base').innerHTML = option_unit2.value;
 
     }
-
-    if (option_unit1.text === 'Decimal') {
+    if (imputed_number == '') {
+        number_output_container.innerHTML = 'Enter a number.'
+    } else if (option_unit1.text === 'Decimal') {
         unit2_value();
         number_output_container.innerHTML = convert_Dacimal_to_nonDecimal(imputed_number, option_unit2.value);
     } else if (option_unit1.text === 'Binary') {
@@ -59,6 +59,12 @@ function convert_btn() {
     }
 
 }
+window.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        convert_btn()
+            // console.log('pfdsoij');
+    }
+});
 
 
 function reset_btn() {
